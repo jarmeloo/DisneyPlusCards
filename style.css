@@ -1,0 +1,99 @@
+* {
+    margin: 0; /* Remove espaço externo padrão */
+    padding: 0; /* Remove espaço interno padrão */
+    box-sizing: border-box;  /* Calcula tamanho incluindo border e padding */
+}
+
+body {
+    background-color: rgb(26, 29, 41); /* Cor de fundo escura */
+    display: flex; /* Ativa o Flexbox */
+    align-items: center; /* Centraliza itens na vertical */
+    justify-content: center; /* Centraliza itens na horizontal */
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+    font-family: Arial, sans-serif; /* Define uma fonte legível */
+}
+
+/* CONTAINER */
+.container {
+    display: flex; /* Layout em linha automática */
+    gap: 20px; /* Espaço de 20px entre cada card */
+    padding: 20px; /* Espaço interno para evitar que os cards encostem nas bordas */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha em telas menores */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+}
+
+/* CARD */
+.item {
+    width: 220px; /* Card tem 220 pixels de largura */
+    cursor: pointer; /* Cursor muda para indicar que é clicável ("mãozinha" ao passar por cima) */
+}
+
+/* BORDA */
+.item__border {
+    position: relative; /* Referência para posicionamento absoluto dentro */
+    border-radius: 12px; /* Bordas arredondadas para um visual mais suave */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse as bordas arredondadas */
+    border: 3px solid rgba(249, 249, 249, 0.1); /* Borda sutil com transparência */
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 20px 30px -10px; /* Sombra para dar profundidade */
+
+    transition: /* Sinaliza que vai animar as mudanças */
+        transform 0.3s ease, /* Ampliação com 0.3 segundos */
+        border 0.3s ease, /* Mudança de borda com 0.3 segundos */
+        box-shadow 0.3s ease; /* Mudança de sombra com 0.3 segundos */
+}
+
+/* IMAGEM BASE (logo + fundo já juntos) */
+.item__image {
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    display: block; /* Remove espaço em branco abaixo da imagem */
+    position: relative; /* Referência para posicionamento absoluto dentro */
+    z-index: 2; /* Garante que a imagem fique acima da borda e do hover */
+}
+
+/* IMAGEM HOVER (fica atrás) */
+.hover-image {
+    position: absolute; /* Posiciona sobre a imagem base */
+    top: 0; /* No topo */
+    left: 0; /* Na esquerda */
+    width: 100%; /* Mesma largura */
+    height: 100%; /* Mesma altura */
+
+    z-index: 1; /* Fica atrás da imagem base */
+    opacity: 0; /* Começa invisível */
+
+    transition: opacity 0.4s ease; /* Transição suave para aparecer/desaparecer */
+}
+
+/* HOVER */
+.item:hover .item__border {
+    transform: scale(1.08); /* Amplia o card em 8% */
+    border: 3px solid rgba(255, 255, 255, 0.8); /* Borda mais visível ao passar o mouse */
+
+    box-shadow:
+        rgba(0, 0, 0, 0.8) 0px 40px 60px -15px,
+        rgba(0, 0, 0, 0.6) 0px 25px 30px -10px;
+}
+
+/* aparece atrás, sem afetar a logo */
+.item:hover .hover-image {
+    opacity: 1; /* Torna a imagem de hover visível */
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) { 
+    .item {
+        width: 45%;  /* Tablets: 2 cards por linha */
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        width: 100%; /* Celulares: 1 card por linha */
+    }
+}
+
+@media (min-width: 992px) {
+    .item {
+        width: 20%; /* Desktops grandes: 5 cards por linha */
+    }
+}
