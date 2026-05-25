@@ -13,6 +13,10 @@ Ao passar o mouse sobre os cards:
 
 Inspirado nos cards oficiais do Disney+.
 
+<p align="center">
+  <img src="./assets/ExemploGitHub.png" width="100%" />
+</p>
+
 ---
 
 ## 🚀 Tecnologias Utilizadas
