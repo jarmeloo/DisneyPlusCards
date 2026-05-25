@@ -48,6 +48,13 @@ index.html
 - CSS
 
 ---
+
+## 📝 Licença
+
+Esse projeto está sob a licença MIT.
+
+---
+
 ## 👨‍💻 Autor
 
 Feito por Johann Jarmelo
