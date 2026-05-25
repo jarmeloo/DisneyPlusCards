@@ -23,7 +23,7 @@ Inspirado nos cards oficiais do Disney+.
 
 Acesse diretamente pelo GitHub Pages:
 
-[Ver Projeto](colocaraquilink)
+[Ver Projeto](https://jarmeloo.github.io/DisneyPlusCards/)
 
 Ou, se preferir rodar localmente:
 
