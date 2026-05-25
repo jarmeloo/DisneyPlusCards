@@ -48,6 +48,6 @@ index.html
 - CSS
 
 ---
-👨‍💻 Autor
+## 👨‍💻 Autor
 
 Feito por Johann Jarmelo
